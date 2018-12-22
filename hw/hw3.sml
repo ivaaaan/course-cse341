@@ -75,3 +75,8 @@ fun count_wildcards p =
 
 fun count_wild_and_variable_lengths p =
     g (fn() => 1) (fn(x) => String.size x) p
+
+fun count_a_var s p =
+    g (fn() => 0) (fn(x) => if s = x then 1 else 0) p
+
+    
