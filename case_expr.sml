@@ -17,4 +17,17 @@ fun max_constant e =
     | Add(e1,e2) =>  Int.max(max_constant e1, max_constant e2)
     | Multiply(e1,e2) => Int.max(max_constant e1, max_constant e2)
                                   
-    
+
+				
+fun length xs =
+    case xs of
+	 [] => 0
+       | x::xs' => 1 + length(xs')
+
+fun append xs ys =
+    case xs of
+	 [] => ys
+       | x::xs' => x::append xs' ys
+			
+
+val _ = length(["abcd", "qwe", "xyz"]);			   
